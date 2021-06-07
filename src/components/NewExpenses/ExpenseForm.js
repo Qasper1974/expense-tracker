@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputAmount, setInputAmount] = useState("");
   const [inputDate, setInputDate] = useState("");
@@ -19,17 +19,19 @@ const ExpenseForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const expenseData = {
+    const newExpenseData = {
       title: inputTitle,
       amount: inputAmount,
       date: new Date(inputDate),
     };
 
-    console.log(expenseData);
+    props.onSubmitExpenseData(newExpenseData);
+
     setInputTitle("");
     setInputAmount("");
     setInputDate("");
   };
+
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
