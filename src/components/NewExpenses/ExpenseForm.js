@@ -43,8 +43,6 @@ const ExpenseForm = (props) => {
             onChange={changeTitleHandler}
           ></input>
         </div>
-      </div>
-      <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Amount</label>
           <input
@@ -55,8 +53,6 @@ const ExpenseForm = (props) => {
             onChange={changeAmountHandler}
           ></input>
         </div>
-      </div>
-      <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Date</label>
           <input
